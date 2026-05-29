@@ -1,19 +1,29 @@
-// https://www.hackerrank.com/challenges/migratory-birds/problem
-/*
-n = int(input())
-arr = list(map(int, input().split()))
+// https://www.hackerrank.com/challenges/sock-merchant/problem
 
-count = {}
-pairs = 0
+use std::collections::HashMap;
 
-for x in arr:
-    if x in count:
-        count[x] += 1
-    else:
-        count[x] = 1
+pub fn sock_merchant(arr: Vec<i32>) -> i32 {
+    let mut count = HashMap::new();
+    let mut pairs = 0;
 
-for value in count.values():
-    pairs += value // 2
+    for x in arr {
+        *count.entry(x).or_insert(0) += 1;
+    }
 
-print(pairs)
-*/
+    for value in count.values() {
+        pairs += value / 2;
+    }
+
+    pairs
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_sock_merchant() {
+        let arr = vec![10, 20, 20, 10, 10, 30, 50, 10, 20];
+        assert_eq!(sock_merchant(arr), 3);
+    }
+}
