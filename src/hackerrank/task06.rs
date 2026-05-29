@@ -1,28 +1,3 @@
-/*
-Original solution (Python):
-
-n, m = map(int, input().split())
-a = list(map(int, input().split()))
-b = list(map(int, input().split()))
-
-count = 0
-for x in range(max(a), min(b) + 1):
-    ok = True
-    for i in a:
-        if x % i != 0:
-            ok = False
-            break
-    for j in b:
-        if j % x != 0:
-            ok = False
-            break
-    
-    if ok:
-        count += 1
-
-print(count)
-*/
-
 pub fn get_total_x(a: &[i32], b: &[i32]) -> i32 {
     let mut count = 0;
 
