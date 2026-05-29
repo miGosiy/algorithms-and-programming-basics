@@ -1,17 +1,4 @@
 // https://www.hackerrank.com/challenges/apple-and-orange/problem
-/*
-Original solution (Python):
-
-x1, v1, x2, v2 = map(int, input().split())
-if v1 <= v2:
-    print("NO")
-else:
-    if (x2 - x1) % (v1 - v2) == 0:
-        print("YES")
-    else:
-        print("NO")
-*/
-
 pub fn kangaroo(x1: i32, v1: i32, x2: i32, v2: i32) -> String {
     if v1 <= v2 {
         return "NO".to_string();
